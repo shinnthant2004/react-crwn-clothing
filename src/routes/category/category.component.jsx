@@ -7,12 +7,10 @@ import { selectCategoriesMap } from "../../store/categories/category.selector";
 
 const Category = () => {
   const { category } = useParams();
-  console.log("category component render&re render");
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
-    console.log("useEffect run and setProduct call");
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
